@@ -20,7 +20,7 @@ body {
 
 .todo-app {
   padding: 20px;
-  max-width: 60rem;
+  max-width: 44rem;
   border-radius: 6px;
   margin-inline: auto;
   background-color: var(--secondary-color);
