@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RoutePath } from '@/routes';
 import { useTodoStore } from '@/stores/useTodoStore';
 const todoStore = useTodoStore();
 </script>
@@ -15,7 +16,7 @@ const todoStore = useTodoStore();
           <button class="delete" @click.stop="todoStore.deleteTodoItem(todoItem.id)">Delete</button>
           <RouterLink
             :to="{
-              path: '/more/' + todoItem.id,
+              path: `${RoutePath.MORE}${todoItem.id}`,
               query: { text: todoItem.text, isCompleted: String(todoItem.isCompleted) },
             }"
           >
