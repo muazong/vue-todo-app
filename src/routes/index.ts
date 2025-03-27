@@ -2,14 +2,19 @@ import { createWebHistory, createRouter, type RouteRecordRaw } from 'vue-router'
 
 import HomeView from '@/views/HomeView.vue';
 
+export enum RoutePath {
+  HOME = '/',
+  MORE = '/more/',
+}
+
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
+    path: RoutePath.HOME,
     name: 'home',
     component: HomeView,
   },
   {
-    path: '/more/:id',
+    path: `${RoutePath.MORE}:id`,
     name: 'more',
     component: () => import('@/views/MoreView.vue'),
     props: (route) => ({
