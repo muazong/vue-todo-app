@@ -20,7 +20,7 @@ const useTodoStore = defineStore('todo-store', () => {
       isCompleted: false,
     };
 
-    todoList.push(newTodo);
+    todoList.unshift(newTodo);
     todoInput.value = '';
     saveToLocalStorage();
   }
