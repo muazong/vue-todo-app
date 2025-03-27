@@ -6,6 +6,7 @@
 
   --white-color: #f1e7e7;
   --orange-color: #ec5228;
+  --black-color: #18230f;
 
   --error-color: #d84040;
   --success-color: #16c47f;
@@ -34,7 +35,8 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   font-family: 'Roboto', sans-serif;
 }
 
