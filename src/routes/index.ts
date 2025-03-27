@@ -1,8 +1,8 @@
-import { createWebHistory, createRouter } from 'vue-router';
+import { createWebHistory, createRouter, type RouteRecordRaw } from 'vue-router';
 
 import HomeView from '@/views/HomeView.vue';
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
@@ -12,6 +12,11 @@ const routes = [
     path: '/more/:id',
     name: 'more',
     component: () => import('@/views/MoreView.vue'),
+    props: (route) => ({
+      id: route.params.id,
+      text: route.query.text,
+      isCompleted: route.query.isCompleted === 'true',
+    }),
   },
 ];
 

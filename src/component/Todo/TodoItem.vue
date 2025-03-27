@@ -13,7 +13,14 @@ const todoStore = useTodoStore();
         <div class="modifier-btns">
           <button class="done" @click="todoStore.toggleTodoCompleted(todoItem.id)">Done</button>
           <button class="delete" @click.stop="todoStore.deleteTodoItem(todoItem.id)">Delete</button>
-          <RouterLink :to="'/more/' + todoItem.id"><button class="more">More</button></RouterLink>
+          <RouterLink
+            :to="{
+              path: '/more/' + todoItem.id,
+              query: { text: todoItem.text, isCompleted: String(todoItem.isCompleted) },
+            }"
+          >
+            <button class="more">More</button>
+          </RouterLink>
         </div>
       </li>
     </ul>
