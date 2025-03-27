@@ -17,7 +17,11 @@ const todoStore = useTodoStore();
           <RouterLink
             :to="{
               path: `${RoutePath.MORE}${todoItem.id}`,
-              query: { text: todoItem.text, isCompleted: String(todoItem.isCompleted) },
+              query: {
+                text: todoItem.text,
+                description: todoItem.description,
+                isCompleted: String(todoItem.isCompleted),
+              },
             }"
           >
             <button class="more">More</button>
