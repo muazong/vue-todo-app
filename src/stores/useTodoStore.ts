@@ -5,6 +5,7 @@ import { reactive, ref } from 'vue';
 
 const useTodoStore = defineStore('todo-store', () => {
   const todoInput = ref<string>('');
+  const todoInputDescription = ref<string>('');
   let todoList = reactive<TodoItem[]>([]);
 
   function addNewTodo() {
@@ -16,6 +17,7 @@ const useTodoStore = defineStore('todo-store', () => {
     const newTodo: TodoItem = {
       id: uuidV4(),
       text: todoInput.value,
+      description: todoInputDescription.value,
       isCompleted: false,
     };
 
@@ -36,6 +38,7 @@ const useTodoStore = defineStore('todo-store', () => {
 
   return {
     todoInput,
+    todoInputDescription,
     addNewTodo,
     todoList,
     toggleTodoCompleted,
