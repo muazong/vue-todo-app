@@ -20,6 +20,7 @@ const routes: RouteRecordRaw[] = [
     props: (route) => ({
       id: route.params.id,
       text: route.query.text,
+      descipiton: route.query.descipiton,
       isCompleted: route.query.isCompleted === 'true',
     }),
   },
