@@ -25,11 +25,11 @@ function handleInputDescription(event: Event) {
         <p class="state">{{ isCompleted ? 'Completed' : 'In Progress' }}</p>
       </div>
 
-      <div class="scratchpad">
-        <label for="scratchpad" class="scratchpad-label">SCRATCHPAD</label>
+      <div class="description">
+        <label for="description" class="description-label">DESCRIPTION</label>
         <textarea
-          id="scratchpad"
-          class="scratchpad-textarea"
+          id="description"
+          class="description-textarea"
           :value="description"
           spellcheck="false"
           @input="handleInputDescription"
@@ -79,17 +79,17 @@ function handleInputDescription(event: Event) {
     }
   }
 
-  .scratchpad {
+  .description {
     display: flex;
     flex-direction: column;
 
-    .scratchpad-label {
+    .description-label {
       color: rgba(0, 0, 0, 0.35);
       font-size: 12px;
       font-weight: 400;
     }
 
-    .scratchpad-textarea {
+    .description-textarea {
       resize: none;
       outline: none;
       font-size: 18px;
